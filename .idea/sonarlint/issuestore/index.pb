@@ -8,3 +8,9 @@ R
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
+V
+&src/main/java/io/gul/EmployeeType.java,2/8/28be52ee20d195936f11a2c1b7fdfae250647317
+T
+$src/main/java/io/gul/AccessCard.java,f/b/fbb30eac14d88e7f227b11d6d0b2b20a84ce4626
+P
+ src/main/java/io/gul/Status.java,3/a/3a0d39cfbfacc0433ff5aea41b3994b03c8e4f42
