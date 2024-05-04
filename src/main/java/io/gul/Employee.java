@@ -5,11 +5,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -20,12 +18,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "employee")
-public class Employee {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-
+public class Employee extends BaseEntity {
 	@Basic
 	private String name;
 
@@ -39,16 +32,12 @@ public class Employee {
 	@OneToOne
 	private AccessCard card;
 
-	@OneToMany (mappedBy = "emp") // By default, its Lazy
+	@OneToMany(mappedBy = "emp") // By default, its Lazy
 	private List<PayStub> payStub;
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
+	@ManyToMany
+	@JoinTable(name = "employee_email_group", joinColumns = @JoinColumn(name = "emp_id"), inverseJoinColumns = @JoinColumn(name = "emp_group_id"))
+	private List<EmailGroup> emailGroup;
 
 	public String getName() {
 		return name;
@@ -90,8 +79,20 @@ public class Employee {
 		this.payStub = payStubs;
 	}
 
-	@Override
-	public String toString() {
-		return "Employee{" + "id=" + id + ", name='" + name + '\'' + ", dob=" + dob + ", type=" + type + ", card=" + card + '}';
+	public List<PayStub> getPayStub() {
+		return payStub;
 	}
+
+	public void setPayStub(List<PayStub> payStub) {
+		this.payStub = payStub;
+	}
+
+	public List<EmailGroup> getEmailGroup() {
+		return emailGroup;
+	}
+
+	public void setEmailGroup(List<EmailGroup> emailGroup) {
+		this.emailGroup = emailGroup;
+	}
+
 }

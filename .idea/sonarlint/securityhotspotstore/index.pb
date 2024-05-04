@@ -22,3 +22,9 @@ W
 'src/main/java/io/gul/JpaMainReader.java,f/d/fd08a908bdb0d00be1907741a82ed6c76a85ffaa
 Q
 !src/main/java/io/gul/PayStub.java,0/c/0cae0ca57ca0bcedd0d705aa33745710ea17ff3d
+T
+$src/main/java/io/gul/EmailGroup.java,5/a/5aff91330f46b8e6b8bd43811b4d6dc205c1f425
+T
+$src/main/java/io/gul/BaseEntity.java,5/c/5c1109f2969f3c1161c52a9dda20413d555e40ef
+N
+src/main/java/io/gul/Test.java,2/9/29b98e80f2abe202c352b0d15f3df19e45596c9c
