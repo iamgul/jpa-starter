@@ -21,11 +21,16 @@ public class JpaMainWriter {
 
 		AccessCard card1 = new AccessCard();
 		card1.setStatus(Status.ACTIVE);
+		card1.setOwner(e);
+
 		e.setCard(card1);
 
 		AccessCard card2 = new AccessCard();
 		card2.setStatus(Status.INACTIVE);
+		card2.setOwner(e1);
+
 		e1.setCard(card2);
+
 
 		EntityManagerFactory entityManagerFactory = PersistenceManager.getEntityManagerFactory();
 		EntityManager entityManager = entityManagerFactory.createEntityManager();

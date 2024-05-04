@@ -11,11 +11,11 @@ public class JpaMainReader {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		EntityTransaction transaction = entityManager.getTransaction();
 		try {
-			System.out.println("*******Accessing Employee*********");
-			Employee employee = entityManager.find(Employee.class, 1);
-
-			System.out.println("*******Accessing AccessCard*********");
-			System.out.println(employee.getCard());
+//			System.out.println("*******Accessing Employee*********");
+//			Employee employee = entityManager.find(Employee.class, 1);
+//
+//			System.out.println("*******Accessing AccessCard*********");
+//			System.out.println(employee.getCard());
 
 			AccessCard card = entityManager.find(AccessCard.class, 1);
 			System.out.println(card);

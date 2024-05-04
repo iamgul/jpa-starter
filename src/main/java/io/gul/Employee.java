@@ -33,7 +33,7 @@ public class Employee {
 	@Column(updatable = false, length = 10)
 	private EmployeeType type;
 
-	@OneToOne(fetch = FetchType.LAZY) //By default, its EAGER LOADING, We can make it LAZY-LOADING:
+	@OneToOne
 	private AccessCard card;
 
 	public int getId() {

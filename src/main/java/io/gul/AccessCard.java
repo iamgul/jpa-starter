@@ -6,6 +6,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +19,9 @@ public class AccessCard {
 
 	@Enumerated(EnumType.STRING)
 	private Status status;
+
+	@OneToOne
+	private Employee owner;
 
 	public int getId() {
 		return id;
@@ -33,6 +37,14 @@ public class AccessCard {
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+
+	public Employee getOwner() {
+		return owner;
+	}
+
+	public void setOwner(Employee owner) {
+		this.owner = owner;
 	}
 
 	@Override
