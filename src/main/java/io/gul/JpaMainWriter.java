@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import java.time.Month;
+import java.util.Arrays;
 import java.util.Date;
 
 public class JpaMainWriter {
@@ -42,6 +43,8 @@ public class JpaMainWriter {
 		payStub2.setMonth(Month.valueOf("APRIL"));
 		payStub2.setSalary(30_000);
 		payStub2.setEmp(e);
+
+		e.setPayStubs(Arrays.asList(payStub1,payStub2));
 
 
 		EntityManagerFactory entityManagerFactory = PersistenceManager.getEntityManagerFactory();

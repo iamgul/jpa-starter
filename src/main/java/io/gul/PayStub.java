@@ -24,7 +24,7 @@ public class PayStub {
 	@Enumerated(EnumType.STRING)
 	private Month month;
 
-	@ManyToOne(fetch = FetchType.LAZY) // FetchType.EAGER is default behaviour in case of ManyToOne as well
+	@ManyToOne
 	@JoinColumn(name = "pay_stub_for")
 	private Employee emp;
 

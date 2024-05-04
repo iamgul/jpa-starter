@@ -9,11 +9,14 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "employee")
@@ -35,6 +38,9 @@ public class Employee {
 
 	@OneToOne
 	private AccessCard card;
+
+	@OneToMany(mappedBy = "emp") // By default, its Lazy
+	private List<PayStub> payStub;
 
 	public int getId() {
 		return id;
@@ -74,6 +80,14 @@ public class Employee {
 
 	public void setCard(AccessCard card) {
 		this.card = card;
+	}
+
+	public List<PayStub> getPayStubs() {
+		return payStub;
+	}
+
+	public void setPayStubs(List<PayStub> payStubs) {
+		this.payStub = payStubs;
 	}
 
 	@Override
