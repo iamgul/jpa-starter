@@ -17,8 +17,10 @@ public class JpaMainReader {
 			Employee employee = entityManager.find(Employee.class, 1);
 //			System.out.println("Employee AccessCard*****: ");
 //			System.out.println(employee.getCard());
-			System.out.println("*******Accessing Employee PayStubs*********");
-			System.out.println(employee.getPayStubs());
+//			System.out.println("*******Accessing Employee PayStubs*********");
+//			System.out.println(employee.getPayStubs());
+			System.out.println("*******Accessing Employee Email Group*********");
+			System.out.println(employee.getEmailGroup());
 
 //			System.out.println("*******Accessing AccessCard*********");
 //			AccessCard card = entityManager.find(AccessCard.class, 1);
