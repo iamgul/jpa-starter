@@ -1,7 +1,6 @@
-package io.gul;
+package io.gul.entities;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.util.List;

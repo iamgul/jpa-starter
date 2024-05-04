@@ -1,11 +1,13 @@
-package io.gul;
+package io.gul.entities;
+
+import io.gul.enums.EmployeeType;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -33,7 +35,7 @@ public class Employee extends BaseEntity {
 	@OneToOne
 	private AccessCard card;
 
-	@OneToMany(mappedBy = "emp") // By default, its Lazy
+	@OneToMany(mappedBy = "emp",cascade = CascadeType.REMOVE) // By default, its Lazy
 	private List<PayStub> payStub;
 
 	@ManyToMany

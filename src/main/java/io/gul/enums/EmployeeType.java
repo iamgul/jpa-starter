@@ -1,4 +1,4 @@
-package io.gul;
+package io.gul.enums;
 
 public enum EmployeeType {
 

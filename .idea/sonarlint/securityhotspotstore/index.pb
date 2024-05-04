@@ -28,3 +28,15 @@ T
 $src/main/java/io/gul/BaseEntity.java,5/c/5c1109f2969f3c1161c52a9dda20413d555e40ef
 N
 src/main/java/io/gul/Test.java,2/9/29b98e80f2abe202c352b0d15f3df19e45596c9c
+X
+(src/main/java/io/gul/JpaMainUpdater.java,d/3/d3ffcaa485c198d72b2b696e1efce0a4d90bb835
+X
+(src/main/java/io/gul/JpaMainDeleter.java,7/5/755d00f5b5cd88cbbfc6da03a4fc900a91dfbfbe
+]
+-src/main/java/io/gul/entities/AccessCard.java,5/0/503bbbae04e8bf0a11166c5fd2db0ed0974d0c19
+]
+-src/main/java/io/gul/entities/EmailGroup.java,6/e/6e50cb341d67da60ea9522dbbe715594a589c83c
+[
++src/main/java/io/gul/entities/Employee.java,7/0/700b372a2268574dff73a701acffada9d615cb6b
+Z
+*src/main/java/io/gul/entities/PayStub.java,5/8/58715cac1e07271819c572848bce1b2924c59d15

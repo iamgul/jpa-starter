@@ -1,5 +1,8 @@
-package io.gul;
+package io.gul.entities;
 
+
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -17,7 +20,7 @@ public class PayStub extends BaseEntity {
 	@Enumerated(EnumType.STRING)
 	private Month month;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name = "pay_stub_for")
 	private Employee emp;
 

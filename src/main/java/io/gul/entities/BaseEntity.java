@@ -1,4 +1,4 @@
-package io.gul;
+package io.gul.entities;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;

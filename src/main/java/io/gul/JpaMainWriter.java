@@ -1,5 +1,13 @@
 package io.gul;
 
+import io.gul.entities.AccessCard;
+import io.gul.entities.EmailGroup;
+import io.gul.entities.Employee;
+import io.gul.entities.PayStub;
+import io.gul.enums.EmployeeType;
+import io.gul.enums.Status;
+import io.gul.persistence.PersistenceManager;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -44,6 +52,12 @@ public class JpaMainWriter {
 		payStub2.setSalary(30_000);
 		payStub2.setEmp(e0);
 
+		PayStub payStub3 = new PayStub();
+		payStub3.setMonth(Month.MAY);
+		payStub3.setSalary(30_000_00);
+		payStub3.setEmp(e1);
+		e1.setPayStubs(Arrays.asList(payStub3));
+
 		e0.setPayStubs(Arrays.asList(payStub1,payStub2)); // Even if we don't set this value w can fetch the Emloyee payStubs, so it is highly recommended to set this
 
 
@@ -79,6 +93,7 @@ public class JpaMainWriter {
 
 			entityManager.persist(payStub1);
 			entityManager.persist(payStub2);
+			entityManager.persist(payStub3);
 
 
 			entityManager.persist(eg1);

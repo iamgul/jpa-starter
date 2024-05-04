@@ -1,4 +1,4 @@
-package io.gul;
+package io.gul.persistence;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
