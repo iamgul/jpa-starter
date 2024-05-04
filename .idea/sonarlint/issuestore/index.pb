@@ -20,3 +20,5 @@ W
 'src/main/java/io/gul/JpaMainWriter.java,0/7/07e4a187043076dcdf4e15234096546f440bfc91
 W
 'src/main/java/io/gul/JpaMainReader.java,f/d/fd08a908bdb0d00be1907741a82ed6c76a85ffaa
+Q
+!src/main/java/io/gul/PayStub.java,0/c/0cae0ca57ca0bcedd0d705aa33745710ea17ff3d

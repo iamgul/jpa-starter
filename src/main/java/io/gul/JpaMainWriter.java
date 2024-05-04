@@ -3,6 +3,7 @@ package io.gul;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import java.time.Month;
 import java.util.Date;
 
 public class JpaMainWriter {
@@ -32,6 +33,17 @@ public class JpaMainWriter {
 		e1.setCard(card2);
 
 
+		PayStub payStub1 = new PayStub();
+		payStub1.setMonth(Month.MARCH);
+		payStub1.setSalary(20_000);
+		payStub1.setEmp(e);
+
+		PayStub payStub2 = new PayStub();
+		payStub2.setMonth(Month.valueOf("APRIL"));
+		payStub2.setSalary(30_000);
+		payStub2.setEmp(e);
+
+
 		EntityManagerFactory entityManagerFactory = PersistenceManager.getEntityManagerFactory();
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		EntityTransaction transaction = entityManager.getTransaction();
@@ -45,6 +57,9 @@ public class JpaMainWriter {
 
 			entityManager.persist(card1);
 			entityManager.persist(card2);
+
+			entityManager.persist(payStub1);
+			entityManager.persist(payStub2);
 
 			transaction.commit();
 		} finally {

@@ -16,12 +16,16 @@ public class JpaMainReader {
 //			System.out.println("Employee AccessCard*****: ");
 //			System.out.println(employee.getCard());
 
-			System.out.println("*******Accessing AccessCard*********");
-			AccessCard card = entityManager.find(AccessCard.class, 1);
+//			System.out.println("*******Accessing AccessCard*********");
+//			AccessCard card = entityManager.find(AccessCard.class, 1);
+//
+//			System.out.println("AccessCard'sEmployee*****: ");
+//			System.out.println(card.getOwner());
 
-			System.out.println("AccessCard'sEmployee*****: ");
-			System.out.println(card.getOwner());
-	
+			System.out.println("*******Accessing PayStub*********");
+			PayStub card = entityManager.find(PayStub.class, 1);
+			System.out.println("*******Accessing PayStub Employee*********");
+			System.out.println(card.getEmp());
 		}finally {
 			if(entityManager.isOpen()){
 				entityManager.close();
