@@ -5,9 +5,11 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -28,8 +30,11 @@ public class Employee {
 	private Date dob;
 
 	@Enumerated(EnumType.STRING)
-	@Column(updatable = false,length = 10)
+	@Column(updatable = false, length = 10)
 	private EmployeeType type;
+
+	@OneToOne(fetch = FetchType.LAZY) //By default, its EAGER LOADING, We can make it LAZY-LOADING:
+	private AccessCard card;
 
 	public int getId() {
 		return id;
@@ -61,5 +66,18 @@ public class Employee {
 
 	public void setType(EmployeeType type) {
 		this.type = type;
+	}
+
+	public AccessCard getCard() {
+		return card;
+	}
+
+	public void setCard(AccessCard card) {
+		this.card = card;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee{" + "id=" + id + ", name='" + name + '\'' + ", dob=" + dob + ", type=" + type + ", card=" + card + '}';
 	}
 }

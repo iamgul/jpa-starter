@@ -14,3 +14,9 @@ T
 $src/main/java/io/gul/AccessCard.java,f/b/fbb30eac14d88e7f227b11d6d0b2b20a84ce4626
 P
  src/main/java/io/gul/Status.java,3/a/3a0d39cfbfacc0433ff5aea41b3994b03c8e4f42
+\
+,src/main/java/io/gul/PersistenceManager.java,7/6/76a58f123125628f33a572f407cb3b511550d86b
+W
+'src/main/java/io/gul/JpaMainWriter.java,0/7/07e4a187043076dcdf4e15234096546f440bfc91
+W
+'src/main/java/io/gul/JpaMainReader.java,f/d/fd08a908bdb0d00be1907741a82ed6c76a85ffaa

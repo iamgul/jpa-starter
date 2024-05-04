@@ -3,16 +3,16 @@ package io.gul;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
 import java.util.Date;
 
-public class Main {
+public class JpaMainWriter {
 	public static void main(String[] args) {
 
 		Employee e = new Employee();
 		e.setName("Gul");
 		e.setDob(new Date());
 		e.setType(EmployeeType.FULL_TIME);
+
 
 		Employee e1 = new Employee();
 		e1.setName("Mohammed");
@@ -21,9 +21,11 @@ public class Main {
 
 		AccessCard card1 = new AccessCard();
 		card1.setStatus(Status.ACTIVE);
+		e.setCard(card1);
 
 		AccessCard card2 = new AccessCard();
 		card2.setStatus(Status.INACTIVE);
+		e1.setCard(card2);
 
 		EntityManagerFactory entityManagerFactory = PersistenceManager.getEntityManagerFactory();
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
