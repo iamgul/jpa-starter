@@ -20,7 +20,7 @@ public class AccessCard {
 	@Enumerated(EnumType.STRING)
 	private Status status;
 
-	@OneToOne
+	@OneToOne(mappedBy = "card") // it tells JPA that its mirror and when it goes to Employee, there it will find AccessCard entity which it the mirror of this same class , so it doesn't have to join it again
 	private Employee owner;
 
 	public int getId() {
@@ -49,6 +49,6 @@ public class AccessCard {
 
 	@Override
 	public String toString() {
-		return "AccessCard{" + "id=" + id + ", status=" + status + '}';
+		return "AccessCard{" + "id=" + id + ", status=" + status + ", owner=" + owner + '}';
 	}
 }
