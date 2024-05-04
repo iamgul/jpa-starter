@@ -39,7 +39,7 @@ public class Employee {
 	@OneToOne
 	private AccessCard card;
 
-	@OneToMany(mappedBy = "emp") // By default, its Lazy
+	@OneToMany (mappedBy = "emp") // By default, its Lazy
 	private List<PayStub> payStub;
 
 	public int getId() {

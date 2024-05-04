@@ -44,7 +44,7 @@ public class JpaMainWriter {
 		payStub2.setSalary(30_000);
 		payStub2.setEmp(e);
 
-		e.setPayStubs(Arrays.asList(payStub1,payStub2));
+		//e.setPayStubs(Arrays.asList(payStub1,payStub2)); // Even if we don't set this value w can fetch the Emloyee payStubs, so it is highly recommended to set this
 
 
 		EntityManagerFactory entityManagerFactory = PersistenceManager.getEntityManagerFactory();
