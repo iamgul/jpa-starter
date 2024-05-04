@@ -8,27 +8,45 @@ import java.util.Date;
 
 public class Main {
 	public static void main(String[] args) {
+
 		Employee e = new Employee();
-		e.setId(1);
 		e.setName("Gul");
 		e.setDob(new Date());
 		e.setType(EmployeeType.FULL_TIME);
 
 		Employee e1 = new Employee();
-		e1.setId(2);
-		e1.setName("Gul");
+		e1.setName("Mohammed");
+		e1.setDob(new Date());
+		e1.setType(EmployeeType.PART_TIME);
 
-		Employee e2 = new Employee();
-		e2.setId(3);
-		e2.setName("Gul");
+		AccessCard card1 = new AccessCard();
+		card1.setStatus(Status.ACTIVE);
 
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("jpa-starter");
+		AccessCard card2 = new AccessCard();
+		card2.setStatus(Status.INACTIVE);
+
+		EntityManagerFactory entityManagerFactory = PersistenceManager.getEntityManagerFactory();
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		EntityTransaction transaction = entityManager.getTransaction();
-		transaction.begin();
-		entityManager.persist(e);
-		entityManager.persist(e1);
-		entityManager.persist(e2);
-		transaction.commit();
+
+		try {
+
+			transaction.begin();
+
+			entityManager.persist(e);
+			entityManager.persist(e1);
+
+			entityManager.persist(card1);
+			entityManager.persist(card2);
+
+			transaction.commit();
+		} finally {
+			if (entityManager.isOpen()) {
+				entityManager.close();
+			}
+			if (entityManagerFactory.isOpen()) {
+				entityManagerFactory.close();
+			}
+		}
 	}
 }
