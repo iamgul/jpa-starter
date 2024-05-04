@@ -33,7 +33,7 @@ public class Employee {
 	@Column(updatable = false, length = 10)
 	private EmployeeType type;
 
-	@OneToOne(fetch = FetchType.LAZY) //While fetching Employee if we don't want to fetch AccessCard
+	@OneToOne
 	private AccessCard card;
 
 	public int getId() {

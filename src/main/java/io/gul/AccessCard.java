@@ -3,6 +3,7 @@ package io.gul;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class AccessCard {
 	@Enumerated(EnumType.STRING)
 	private Status status;
 
-	@OneToOne(mappedBy = "card") // it tells JPA that its mirror and when it goes to Employee, there it will find AccessCard entity which it the mirror of this same class , so it doesn't have to join it again
+	@OneToOne(mappedBy = "card",fetch = FetchType.LAZY) // It seems FetchTpe.LAZY doesn't behave properly with @mappedBy, since even if it's Lazy it creates one more query which does Select Employee OuterJoin AccessCard;
 	private Employee owner;
 
 	public int getId() {
