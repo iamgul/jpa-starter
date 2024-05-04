@@ -49,6 +49,6 @@ public class AccessCard {
 
 	@Override
 	public String toString() {
-		return "AccessCard{" + "id=" + id + ", status=" + status + ", owner=" + owner + '}';
+		return "AccessCard{" + "id=" + id + ", status=" + status + ", owner="  + '}';
 	}
 }
